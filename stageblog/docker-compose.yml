@@ -103,13 +103,15 @@ services:
 
       # phpmyadmin in an external image
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin
         environment:
-            PMA_HOST: '${DB_DATABASE}'
+            PMA_HOST: 'mysql'
             PMA_USER: '${DB_USERNAME}'
             PMA_PASSWORD: '${DB_PASSWORD}'
         ports:
             - "1088:80"
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge

@@ -86,3 +86,13 @@
         </div>
     </div>
 </nav>
+// for($i = 1; $i <= 10; $i++){
+        //     Post::create([
+        //         'title' => "Blog post " . $i,
+        //         'intro' => "And what are we? Pirates?",
+        //         'description' => "this is all text about the post whatever im hungry and im actually so done with everything. i dont even know why im doing this shit anymore",
+        //         'author' => "Vinnie Rawr",
+        //         'image' => "image.png",
+        //         'published' => true
+        //     ]);
+        // }

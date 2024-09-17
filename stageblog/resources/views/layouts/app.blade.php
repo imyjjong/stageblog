@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased min-h-screen">
         <div class="min-h-screen bg-gray-100 dark:bg-stone-900">
             @include('layouts.navigation')
 
@@ -28,7 +28,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="flex flex-col justify-center items-center p-4">
                 {{ $slot }}
             </main>
         </div>

@@ -1,0 +1,34 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.header{
+    background: darken(map-get(variables.$baseVars, "background"), 5%);
+    width: 100%;
+    height: 6rem;
+
+    &__navigation{
+        @include mixins.flexBox;
+        height: 100%;
+
+        &--list{
+            @include mixins.flexBox;
+            gap: 4rem;
+            list-style: none;
+
+            &-item{
+                & a{
+                    color: map-get(variables.$baseVars, "color");
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+            &-active{
+                & a{
+                    color: map-get(variables.$baseVars, "accent");
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

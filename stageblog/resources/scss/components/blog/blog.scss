@@ -1,0 +1,65 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.blog{
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    width: 55rem;
+
+    &__new{
+        font-size: 120%;
+        background: map-get(variables.$baseVars, "accent");
+        padding: 1rem 2rem;
+        color: map-get(variables.$baseVars, "color");
+        text-decoration: none;
+        border-radius: 0.5rem;
+
+        &:hover{
+            cursor: pointer;
+            background: darken(map-get(variables.$baseVars, "accent"), 2%);
+        }
+    }
+
+    &__results{
+        color: map-get(variables.$baseVars, "accent");
+    }
+}
+
+.post{
+    background: map-get(variables.$postVars, "background");
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    &__image{
+        width: 100%;
+    }
+}
+
+nav.flex.items-center.justify-between{
+    @include mixins.flexBox;
+    flex-direction: column;
+
+    & div:nth-child(1){
+        font-size: 90%;
+        
+    }
+
+    & div:nth-child(2){
+        @include mixins.flexBox;
+        flex-direction: column;
+        font-size: 90%;
+        text-decoration: none;
+
+        & div:nth-child(2)>span{
+            font-size: 2rem;
+            width: 10rem;
+            gap: 1rem;
+            text-decoration: none;
+            @include mixins.flexBox;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.form{
+    height: 50rem;
+    padding: 4rem;
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__title{
+        font-size: 150%;
+        font-weight: 600;
+    }
+
+    &__input{
+        background: none;
+        border: none;
+        border-bottom: 0.2rem solid map-get(variables.$baseVars, "");
+        padding: 0.4rem 0.8rem;
+        color: map-get(variables.$baseVars, "color");
+        font-size: 100%;
+        font-family: map-get(variables.$baseVars, "font");
+        width: 100%;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    &__wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+
+        &--checkbox{
+            appearance: none;
+            width: 2rem;
+            aspect-ratio: 1/1;
+            border: 0.2rem solid map-get(variables.$baseVars, "accent");
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &:checked{
+                background: map-get(variables.$baseVars, "accent");
+            }
+        }
+    }
+    &__submit{
+        padding: 1rem;
+        border: none;
+        font-size: 120%;
+        width: 100%;
+        background: none;
+        color: map-get(variables.$baseVars, "accent");
+        font-weight: 600;
+        border-radius: 0.2rem;
+    }
+}

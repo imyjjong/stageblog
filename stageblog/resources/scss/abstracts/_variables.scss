@@ -1,10 +1,24 @@
 $baseVars: (
-    "background": #101010,
+    "background": black,
     "color": whitesmoke,
     "font": sans-serif,
-    "accent": rgb(124, 128, 199)
+    "accent": #ccc4f6
 );
 
 $postVars: (
-    "background": #090909
+    "background": black
+);
+
+$welcomeVars: (
+    "background": black,
+    "color": white,
+    "svg": white,
+    "navigationColor": white,
+    "focusRed": red,
+    "cardBackground": #18181b,
+    "laravelImage": #ff2d20
+);
+
+$accentColor: (
+    "second": #ecc4f6
 );

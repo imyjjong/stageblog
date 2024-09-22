@@ -1,0 +1,188 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+//weclome__body: font-sans antialiased dark:bg-black dark:text-white/50;
+//welcome: bg-gray-50 text-black/50 dark:bg-black dark:text-white/50;
+//welcome__image: absolute -left-20 top-0 max-w-[877px];
+//welcome__container: relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white;
+//weclome__container--wrapper: relative w-full max-w-2xl px-6 lg:max-w-7xl;
+//welcome__header: grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3;
+//welcome__header--logo: flex lg:justify-center lg:col-start-2;
+//welcome__header--svg: h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20];
+//welcome__header--navigation: -mx-3 flex flex-1 justify-end;
+//weclome__header--navigation-item: rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white;
+//welcome__main: mt-6;
+//laravel: grid gap-6 lg:grid-cols-2 lg:gap-8;
+//laravel__documentation: flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20];
+//laravel__documentation--screenshot: relative flex w-full flex-1 items-stretch;
+//laravel__documentation--screenshot-image: aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden;
+//laravel__documentation--screenshot-wrapper: absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900;
+//laravel__documentation--container: relative flex items-center gap-6 lg:items-end;
+//laravel__documentation--container-wrapper: flex items-start gap-6 lg:flex-col;
+//laravel__documentation--svg: size-5 sm:size-6;
+//laravel__documentation--container-image: flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16;
+//laravel__documentation--container-title: pt-3 sm:pt-5 lg:pt-0;
+//laravel__documentation--container-heading: text-xl font-semibold text-black dark:text-white;
+//laravel__documentation--container-text: mt-4 text-sm/relaxed;
+//laravel__documentation--container-svg: size-6 shrink-0 stroke-[#FF2D20];
+//welcome__footer: py-16 text-center text-sm text-black dark:text-white/70;
+.welcome{
+    background: map-get(variables.$welcomeVars, "background");
+    color: map-get(variables.$welcomeVars, "color");
+
+    &__body{
+        background: map-get(variables.$welcomeVars, "background");
+        color: map-get(variables.$welcomeVars, "color");
+    }
+
+    &__image{
+        position: absolute;
+        left: -8rem;
+        top: 0;
+        max-width: 87.7rem;
+    }
+
+    &__container{
+        position: relative;
+        min-height: 100vh;
+        @include mixins.flexBox;
+        flex-direction: column;
+
+        &--wrapper{
+            position: relative;
+            width: 100%;
+            max-width: 67.2rem;
+            padding: 0 2.4rem;
+        }
+    }
+    &__header{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: 0.8rem;
+        padding: 4rem 0;
+
+        &--logo{
+            display: flex;
+        }
+        &--svg{
+            height: 4.8rem;
+            width: auto;
+            color: map-get(variables.$welcomeVars, "svg");
+        }
+        &--navigation{
+            margin: 0 -1.2rem;
+            display: flex;
+            flex: 1 1 0%;
+            justify-content: flex-end;
+            &-item{
+                border-radius: 0.6rem;
+                padding: 0.8rem 1.2rem;
+                color: map-get(variables.$welcomeVars, "navigationColor");
+
+                &:hover{
+                    color: rgba(map-get(variables.$welcomeVars, "navigationColor"), 0.7);
+                }
+                &:focus{
+                    outline: none;
+                }
+                &:focus-visible{
+                    box-shadow: 0 0 1rem 1rem map-get(variables.$welcomeVars, "focusRed");
+                }
+            }
+        }
+    }
+    &__main{
+        margin-top: 2.4rem;
+    }
+    &__footer{
+        padding: 6.4rem 0;
+        text-align: center;
+        font-size: 1.4rem;
+        color: rgba(map-get(variables.$welcomeVars, "color"), 0.7);
+    }
+}
+
+.laravel{
+    display: grid;
+    gap: 2.4rem;
+
+    &__documentation{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2.4rem;
+        overflow: hidden;
+        border-radius: 0.8rem;
+        background: map-get(variables.$welcomeVars, "cardBackground");
+        padding: 2.4rem;
+
+        &--svg{
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &--screenshot{
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex: 1 1 0%;
+            align-items: stretch;
+
+            &-image{
+                aspect-ratio: 16 / 9;
+                height: 100%;
+                width: 100%;
+                flex: 1 1 0%;
+                border-radius: 1rem;
+                object-position: top;
+            }
+            &-wrapper{
+                position: absolute;
+                bottom: -6.4rem;
+                left: -6.4rem;
+                height: 16rem;
+                width: calc(100% + 12.8rem);
+            }
+        }
+        &--container{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+
+            &-wrapper{
+                display: flex;
+                align-items: start;
+                gap: 2.4rem;
+            }
+            &-image{
+                display: flex;
+                width: 4.8rem;
+                height: 4.8rem;
+                flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                background: rgba(map-get(variables.$welcomeVars, "laravelImage"), 0.1);
+            }
+            &-title{
+                padding-top: 1.2rem;
+            }
+            &-heading{
+                font-size: 2rem;
+                font-weight: 600;
+                color: map-get(variables.$welcomeVars, "color");
+            }
+            &-text{
+                margin-top: 1.6rem;
+                font-size: 1.4rem;
+            }
+            &-svg{
+                width: 2.4rem;
+                height: 2.4rem;
+                flex-shrink: 0;
+                stroke: map-get(variables.$welcomeVars, "laravelImage");
+            }
+        }
+    }
+}

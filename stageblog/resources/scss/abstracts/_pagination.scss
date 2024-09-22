@@ -1,0 +1,65 @@
+@use "variables";
+@use "mixins";
+
+.pagination{
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 100%;
+
+    &__arrows{
+        font-size: 100%;
+        @include mixins.flexBox;
+        gap: 1rem;
+
+        &--previous{
+            text-decoration: none;
+            color: map-get(variables.$baseVars, "color");
+            &-link{
+                color: map-get(variables.$baseVars, "accent");
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+
+        &--next{
+            color: map-get(variables.$baseVars, "accent");
+            font-weight: 600;
+            text-decoration: none;
+            &-link{
+                text-decoration: none;
+                color: map-get(variables.$baseVars, "color");
+            }
+        }
+    }
+
+    &__results{
+        @include mixins.flexBox;
+        flex-direction: column;
+        gap: 1rem;
+        color: map-get(variables.$baseVars, "color");
+        font-size: 90%;
+
+        &--textWrapper{
+            font-size: 95%;
+            color: rgba(map-get(variables.$baseVars, "color"), 0.4);
+        }
+
+        &--numbers{
+            @include mixins.flexBox;
+            gap: 1rem;
+            &-active{
+                color: map-get(variables.$baseVars, "accent");
+                font-weight: 600;
+                font-size: 100%;
+            }
+            &-number{
+                color: rgba(map-get(variables.$baseVars, "color"), 0.7);
+                text-decoration: none;
+                &:hover{
+                    color: map-get(variables.$baseVars, "accent");
+                }
+            }
+        }
+    }
+}

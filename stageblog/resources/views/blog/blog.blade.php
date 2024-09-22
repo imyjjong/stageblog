@@ -1,5 +1,5 @@
 <x-app-layout>
-    <a href="{{route('posts.create')}}" class="blog__new">new post</a>
+    <a href="{{route('posts.create')}}" class="blog__new">New post</a>
     <section class="blog">
         <p class="blog__results">There are {{$posts->total()}} results</p>
     @foreach($posts as $post)
@@ -22,7 +22,7 @@
 
     <div class="pagination">
         {{$posts->links()}}
-        </div>
+    </div>
         
     </section>
 

@@ -14,6 +14,11 @@
             </span>
             <h3 class="post__author">{{$post->author}}</h3>
             <img class="post__image" src="{{$post->image}}" alt="">
+            @if($post->stage == true)
+                <h3 class="post__stage--one">Stage 2</h3>
+            @else
+                <h3 class="post__stage--two">Stage 1</h3>
+            @endif
             <h3 class="post__intro">{{$post->intro}}
                 <a class="post__readLink" href="/blog/{{$post->id}}">read more...</a>
             </h3>

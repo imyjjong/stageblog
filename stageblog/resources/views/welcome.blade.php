@@ -24,7 +24,7 @@
                             <nav class="welcome__header--navigation">
                                 @auth
                                     <a
-                                        href="{{ url('/dashboard') }}"
+                                        href="{{ url('/dashboard/dashboard') }}"
                                         class="welcome__header--navigation-item"
                                     >
                                         Dashboard

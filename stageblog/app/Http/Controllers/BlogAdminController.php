@@ -28,16 +28,30 @@ class BlogAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $post = Post::create([
-            'title' => $request->title,
-            'intro' => $request->intro,
-            'description' => $request->description,
-            'author' => $request->author,
-            'image' => $request->image,
-            'published' => true
+        $data = $request->validate([
+            'title' => 'required|min:3',
+            'intro' => 'required',
+            'description' => 'required',
+            'author' => 'required',
+            'image' => '',
+            'stage' => '',
+            'published' => ''
         ]);
+        
+        $data['stage'] = false;
+        if(isset($data['stage'])){
+            $data['stage'] = true;
+        }
 
-        return redirect()->route('blog.index');
+        $data['published'] = false;
+        if(isset($data['published'])){
+            $data['published'] = true;
+        }
+
+        $post = new Post($data);
+        $post->save();
+
+        return redirect()->route('blog.blog');
     }
 
     /**

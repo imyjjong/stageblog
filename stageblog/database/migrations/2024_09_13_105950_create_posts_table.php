@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('author');
             $table->string('image')->nullable();
+            $table->boolean('stage')->default(false);
             $table->boolean('published')->default(false);
             $table->timestamps();
         });

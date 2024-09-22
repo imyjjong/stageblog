@@ -179,6 +179,10 @@ body {
   stroke: #ff2d20;
 }
 
+.login {
+  background: blue;
+}
+
 .header {
   background: black;
   width: 100%;
@@ -186,8 +190,9 @@ body {
 }
 .header__navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 2rem 10rem;
   height: 100%;
 }
 .header__navigation--list {
@@ -207,13 +212,16 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
+.header__navigation--item {
+  font-weight: 600;
+  color: #ecc4f6;
+}
 
 .blog {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
   padding: 2rem;
   width: 55rem;
 }
@@ -231,6 +239,7 @@ body {
 }
 .blog__results {
   color: #ccc4f6;
+  margin-bottom: 1rem;
 }
 
 .post {
@@ -240,7 +249,8 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  border: 0.01rem solid rgba(204, 196, 246, 0.2);
 }
 .post__image {
   width: 80%;
@@ -290,6 +300,14 @@ body {
   font-size: 150%;
   font-weight: 600;
 }
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+}
 .form__input {
   background: none;
   border: none;
@@ -303,23 +321,23 @@ body {
 .form__input:focus {
   outline: none;
 }
-.form__wrapper {
+.form__published {
   width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 1rem;
 }
-.form__wrapper--checkbox {
+.form__published--checkbox {
   appearance: none;
   width: 2rem;
   aspect-ratio: 1/1;
   border: 0.2rem solid #ccc4f6;
 }
-.form__wrapper--checkbox:hover {
+.form__published--checkbox:hover {
   cursor: pointer;
 }
-.form__wrapper--checkbox:checked {
+.form__published--checkbox:checked {
   background: #ccc4f6;
 }
 .form__submit {
@@ -332,6 +350,10 @@ body {
   font-weight: 600;
   border-radius: 0.2rem;
 }
+.form__error {
+  color: rgb(158, 2, 2);
+  font-size: 70%;
+}
 
 .pagination {
   display: flex;
@@ -340,6 +362,7 @@ body {
   flex-direction: column;
   gap: 1rem;
   font-size: 100%;
+  margin-top: 1rem;
 }
 .pagination__arrows {
   font-size: 100%;
@@ -396,6 +419,17 @@ body {
 }
 .pagination__results--numbers-number:hover {
   color: #ccc4f6;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  font-size: 90%;
+  color: rgba(204, 196, 246, 0.4);
+  border-top: 0.1rem solid rgba(204, 196, 246, 0.4);
 }
 
 /*# sourceMappingURL=app.css.map */

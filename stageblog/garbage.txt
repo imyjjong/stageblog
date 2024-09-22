@@ -96,3 +96,15 @@
         //         'published' => true
         //     ]);
         // }
+
+        
+        $post = Post::create([
+            'title' => $request->title,
+            'intro' => $request->intro,
+            'description' => $request->description,
+            'author' => $request->author,
+            'image' => $request->image,
+            'published' => true
+        ]);
+
+        return redirect()->route('blog.index');

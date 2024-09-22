@@ -7,7 +7,10 @@
     height: 6rem;
 
     &__navigation{
-        @include mixins.flexBox;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 10rem;
         height: 100%;
 
         &--list{
@@ -29,6 +32,11 @@
                     font-weight: 600;
                 }
             }
+        }
+
+        &--item{
+            font-weight: 600;
+            color: map-get(variables.$accentColor, "second");
         }
     }
 }

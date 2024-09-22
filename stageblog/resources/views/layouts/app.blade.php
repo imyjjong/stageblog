@@ -31,6 +31,9 @@
             <main class="main">
                 {{ $slot }}
             </main>
+            <footer class="footer">
+                <p class="footer__text">Stageblog</p>
+            </footer>
         </div>
     </body>
 </html>

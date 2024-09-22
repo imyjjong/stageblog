@@ -1,0 +1,11 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.footer{
+    width: 100%;
+    @include mixins.flexBox;
+    padding: 4rem;
+    font-size: 90%;
+    color: rgba(map-get(variables.$baseVars, "accent"), 0.4);
+    border-top: 0.1rem solid rgba(map-get(variables.$baseVars, "accent"), 0.4);
+}

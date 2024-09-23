@@ -16,6 +16,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/about', [ \App\Http\Controllers\AboutController::class, 'about'])->name('about');
     Route::get('/blog', [ \App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+    Route::get('/stageone', [ \App\Http\Controllers\BlogController::class, 'stageone'])->name('blog.stageone');
+    Route::get('/stagetwo', [ \App\Http\Controllers\BlogController::class, 'stagetwo'])->name('blog.stagetwo');
     Route::get('/contact', [ \App\Http\Controllers\ContactController::class, 'contact'])->name('contact.form');
 
     Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){        

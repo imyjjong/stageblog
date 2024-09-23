@@ -108,3 +108,23 @@
         ]);
 
         return redirect()->route('blog.index');
+
+
+        $data['stage'] = false;
+        if(isset($data['stage'])){
+            $data['stage'] = true;
+        }
+
+        $data['published'] = false;
+        if(isset($data['published'])){
+            $data['published'] = true;
+        }
+
+        $test = Post::where('stage', 1)->get();
+        dd($test);
+
+        
+    <div class="pagination">
+    <p class="blog__results">There are {{$posts->total()}} results</p>
+        {{$posts->links()}}
+    </div>

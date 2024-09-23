@@ -1,5 +1,30 @@
+@use "variables";
+
 @mixin flexBox{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin checkbox{
+    width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+
+        &--checkbox{
+            appearance: none;
+            width: 2rem;
+            aspect-ratio: 1/1;
+            border: 0.2rem solid map-get(variables.$baseVars, "accent");
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &:checked{
+                background: map-get(variables.$baseVars, "accent");
+            }
+        }
 }

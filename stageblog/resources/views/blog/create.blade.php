@@ -31,11 +31,11 @@
         </span>
         <span class="form__stage">
             <label for="stage">Stage 1</label>
-            <input type="checkbox" name="stage" value="1" class="form__stage--checkbox">
+            <input type="checkbox" name="stage" value="1" checked="" class="form__stage--checkbox">
         </span>
         <span class="form__published">
             <label for="published">Published</label>
-            <input type="checkbox" name="published" value="1" class="form__published--checkbox">
+            <input type="checkbox" name="published" value="1" checked="" class="form__published--checkbox">
         </span>
 
         <input type="submit" class="form__submit">

@@ -19,12 +19,14 @@
 
         &:hover{
             cursor: pointer;
+            background: darken(map-get(variables.$baseVars, "accent"), 2%);
         }
     }
 
     &__results{
-        color: map-get(variables.$baseVars, "accent");
+        color: rgba(map-get(variables.$baseVars, "accent"), 0.4);
         margin-bottom: 1rem;
+        font-size: 90%;
     }
 }
 
@@ -35,6 +37,7 @@
     gap: 2rem;
     padding: 4rem 2rem;
     border: 0.01rem solid rgba(map-get(variables.$baseVars, "accent"), 0.2);
+    width: 51rem;
 
     &__image{
         width: 80%;
@@ -57,12 +60,28 @@
         }
     }
 
-    &__author{
-        font-size: 90%;
+    &__details{
+        @include mixins.flexBox;
+        gap: 1rem;
+        &--author{
+            font-size: 90%;
+        }
+        &--date{
+            font-size: 85%;
+            color: map-get(variables.$baseVars, "accent");
+        }
     }
     &__intro{
         font-size: 100%;
         font-weight: 500;
+    }
+    &__stage{
+        &--one{
+            color: map-get(variables.$accentColor, "second");
+        }
+        &--two{
+            color: map-get(variables.$baseVars, "accent");
+        }
     }
     &__readLink{
         color: map-get(variables.$baseVars, "accent");

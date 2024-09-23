@@ -1,0 +1,11 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.guestbody{
+    min-height: 100vh;
+    background: white;
+}
+.auth{
+    background: blue;
+    @include mixins.flexBox;
+}

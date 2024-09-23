@@ -35,23 +35,13 @@ class BlogAdminController extends Controller
             'author' => 'required',
             'image' => '',
             'stage' => '',
-            'published' => ''
+            'published' => '',
         ]);
         
-        $data['stage'] = false;
-        if(isset($data['stage'])){
-            $data['stage'] = true;
-        }
-
-        $data['published'] = false;
-        if(isset($data['published'])){
-            $data['published'] = true;
-        }
-
         $post = new Post($data);
         $post->save();
 
-        return redirect()->route('blog.blog');
+        return redirect()->route('blog.index');
     }
 
     /**

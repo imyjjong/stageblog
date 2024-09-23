@@ -17,8 +17,11 @@
             @include mixins.flexBox;
             gap: 4rem;
             list-style: none;
+            height: 6rem;
 
             &-item{
+                @include mixins.flexBox;
+                height: 100%;
                 & a{
                     color: map-get(variables.$baseVars, "color");
                     text-decoration: none;
@@ -26,11 +29,53 @@
                 }
             }
             &-active{
+                @include mixins.flexBox;
+                height: 100%;
+                border-bottom: 0.2rem solid map-get(variables.$baseVars, "accent");
                 & a{
                     color: map-get(variables.$baseVars, "accent");
                     text-decoration: none;
                     font-weight: 600;
                 }
+            }
+
+            &-button{
+                background: none;
+                border: none;
+                color: map-get(variables.$baseVars, "color");
+                text-decoration: none;
+                font-weight: 600;
+                position: relative;
+                &:hover{
+                    cursor: pointer;
+                }
+                & a{
+                    color: map-get(variables.$baseVars, "background");
+                    text-decoration: none;
+                    font-weight: 600;
+                    width: 100%;
+
+                    &:hover{
+                        cursor: pointer;
+                        color: lighten(map-get(variables.$baseVars, "background"), 5%);
+                    }
+                }
+            }
+            &-wrapper{
+                position: absolute;
+                top: 100%;
+                left: -10%;
+                display: none;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: start;
+                gap: 1rem;
+                padding: 1rem 0.6rem;
+                width: 10rem;
+                background: map-get(variables.$baseVars, "accent");
+            }
+            &-button:hover &-wrapper{
+                display: flex;
             }
         }
 

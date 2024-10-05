@@ -1,3 +1,3 @@
 <x-app-layout>
-    N
+    <p>{{$post->title}}</p>
 </x-app-layout>

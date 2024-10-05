@@ -1,9 +1,10 @@
 @use "abstracts/reset";
 @use "abstracts/base";
 @use "components/welcome/welcome.scss";
-//@use "components/auth/auth.scss";
+@use "components/auth/auth.scss";
 @use "components/header/header.scss";
 @use "components/blog/blog.scss";
 @use "components/form/form.scss";
 @use "abstracts/pagination";
 @use "components/footer/footer.scss";
+@use "components/post/post.scss";

@@ -1,0 +1,76 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.guestbody{
+    min-height: 100vh;
+    background: map-get(variables.$baseVars, "background");
+    @include mixins.flexBox;
+}
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+        width: 100%;
+
+        &--login{
+            color: darken(map-get(variables.$baseVars, "color"), 35%);
+            text-decoration: none;
+            font-size: 90%;
+
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+                color: map-get(variables.$baseVars, "accent");
+            }
+        }
+
+        &--submit{
+            @include mixins.flexBox;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+    }
+
+    &__error{
+        font-size: 90%;
+    }
+
+    &__checkbox{
+        @include mixins.checkbox;
+    }
+
+    &__button{
+        background: none;
+        border: none;
+        color: map-get(variables.$baseVars, "accent");
+        font-size: 100%;
+        font-weight: 600;
+
+        &:hover{
+            cursor: pointer;
+            color: map-get(variables.$accentColor, "second");
+        }
+    }
+
+    &__label{
+        font-size: 90%;
+    }
+    
+    &__input{
+        background: lighten(map-get(variables.$baseVars, "background"), 5%);
+        border: none;
+        padding: 0.4rem 1rem;
+        color: map-get(variables.$baseVars, "color");
+        font-size: 100%;
+    }
+}

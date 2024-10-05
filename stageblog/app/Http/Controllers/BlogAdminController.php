@@ -49,7 +49,7 @@ class BlogAdminController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('blog.post', ['post' => $post]);
     }
 
     /**

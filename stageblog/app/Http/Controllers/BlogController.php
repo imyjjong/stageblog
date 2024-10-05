@@ -26,4 +26,9 @@ class BlogController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function show(Post $post){
+        $post->load('comments');
+        return view('posts.show', compact('post'));
+    }
 }

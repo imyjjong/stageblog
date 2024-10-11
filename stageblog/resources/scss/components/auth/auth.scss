@@ -42,7 +42,9 @@
     }
 
     &__error{
-        font-size: 90%;
+        list-style: none;
+        font-size: 70%;
+        color: map-get(variables.$baseVars, "error")
     }
 
     &__checkbox{

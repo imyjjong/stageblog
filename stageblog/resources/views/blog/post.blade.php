@@ -1,9 +1,17 @@
 <x-app-layout>
     <section class="blog">
         <div class="blog__media">
+        @if(isset($post->image))
             <figure class="blog__media--figure">
                 <img src="{{$post->image}}" alt="" class="blog__media--image">
             </figure>
+        @else
+            <figure class="blog__media--figure">
+                <h3 class="blog__media--empty">
+                    No photo
+                </h3>
+            </figure>
+        @endif
         </div>
         <div class="blog__wrapper">
             <article class="blog__info">
@@ -13,8 +21,16 @@
                 </span>
                 <p class="blog__info--description">{{$post->description}}</p>
                 <span class="blog__info--wrapper">
-                    <h3 class="blog__info--wrappper-stage">{{$post->stage}}</h3>
-                    <h3 class="blog__info--wrapper-published">{{$post->published}}</h3>
+                    @if($post->stage == true)
+                        <h3 class="blog__info--wrapper-one">Stage 2</h3>
+                    @else
+                        <h3 class="blog__info--wrapper-two">Stage 1</h3>
+                    @endif
+                    @if($post->published == true)
+                        <h3 class="blog__info--wrapper-published">published</h3>
+                    @else     
+                        <h3 class="blog__info--wrapper-draft">draft</h3>
+                    @endif
                 </span>
             </article>
             <div class="blog__comments">
@@ -25,9 +41,9 @@
                         <article class="blog__comment">
                             <span class="blog__comment--wrapper">
                                 <h3 class="blog__comment--wrapper-author">{{$comment->author}}</h3>
-                                <h3 class="blog__comment-wrapper-date">{{$comment->created_at->format('d-m-y')}}</h3>
                             </span>
                             <p class="blog__comment--text">{{$comment->comment}}</p>
+                            <h3 class="blog__comment--date">{{$comment->created_at->format('d-m-y')}}</h3>
                         </article>
                     @endforeach
                 @endif

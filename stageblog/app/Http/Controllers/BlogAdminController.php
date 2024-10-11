@@ -49,7 +49,8 @@ class BlogAdminController extends Controller
      */
     public function show(Post $post)
     {
-        return view('blog.post', ['post' => $post]);
+        $comments = $post->load('comments')->comments;
+        return view('blog.post', compact('post'), ['comments' => $comments]);
     }
 
     /**

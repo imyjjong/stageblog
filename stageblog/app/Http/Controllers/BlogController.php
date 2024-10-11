@@ -28,7 +28,8 @@ class BlogController extends Controller
     }
 
     public function show(Post $post){
-        $post->load('comments');
-        return view('posts.show', compact('post'));
+        $comments = $post->load('comments')->comments;
+        return view('blog.post', compact('post'), ['comments' => $comments]);
+        
     }
 }

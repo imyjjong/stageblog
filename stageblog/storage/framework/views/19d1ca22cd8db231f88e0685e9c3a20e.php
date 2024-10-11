@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css']); ?>
+        <link rel="stylesheet" href="<?php echo e(asset('build/assets/app-BZjq6Am0.css')); ?>">
     </head>
     <body class="welcome__body">
         <div class="welcome">

@@ -8,74 +8,71 @@
 <?php $attributes = $attributes->except(\App\View\Components\AppLayout::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    <p class="form__title">form</p>
     <form class="form" action="<?php echo e(route('posts.store')); ?>" method="POST">
+        <p class="form__title">Create post</p>
         <?php echo csrf_field(); ?>
-        <span class="form__wrapper">
-            <input type="text" placeholder="Title" value="<?php echo e(old('title')); ?>" name="title" class="form__input">
-            <?php $__errorArgs = ['title'];
+        <div class="form__inputs">
+            <span class="form__wrapper">
+                <label for="title" class="form__label">Post name</label>
+                <input type="text" value="<?php echo e(old('title')); ?>" name="title" class="form__input">
+                <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p class="form__error"><?php echo e($message); ?></p>
-            <?php unset($message);
+                    <p class="form__error"><?php echo e($message); ?></p>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-        </span>
-        <span class="form__wrapper">
-            <textarea placeholder="Intro" name="intro" class="form__input"><?php echo e(old('intro')); ?></textarea>
-            <?php $__errorArgs = ['intro'];
+            </span>
+            <span class="form__wrapper">
+                <label for="intro" class="form__label">Post intro</label>
+                <textarea name="intro" class="form__input"><?php echo e(old('intro')); ?></textarea>
+                <?php $__errorArgs = ['intro'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p class="form__error"><?php echo e($message); ?></p>
-            <?php unset($message);
+                    <p class="form__error"><?php echo e($message); ?></p>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-        </span>
-        <span class="form__wrapper">
-            <textarea placeholder="Description" name="description" class="form__input"><?php echo e(old('description')); ?></textarea>
-            <?php $__errorArgs = ['description'];
+            </span>
+            <span class="form__wrapper">
+                <label for="description" class="form__label">Post text</label>
+                <textarea name="description" class="form__input--text"><?php echo e(old('description')); ?></textarea>
+                <?php $__errorArgs = ['description'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p class="form__error"><?php echo e($message); ?></p>
-            <?php unset($message);
+                    <p class="form__error"><?php echo e($message); ?></p>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-        </span>
-        <span class="form__wrapper">
-            <input type="text" placeholder="Image" value="<?php echo e(old('image')); ?>" name="image" class="form__input">
-        </span>
-        <span class="form__wrapper">
-            <input type="text" placeholder="Author" value="<?php echo e(old('author')); ?>" name="author" class="form__input">
-            <?php $__errorArgs = ['author'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                <p class="form__error"><?php echo e($message); ?></p>
-            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-        </span>
-        <span class="form__stage">
-            <label for="stage">Stage 1</label>
-            <input type="checkbox" name="stage" value="1" checked="" class="form__stage--checkbox">
-        </span>
-        <span class="form__published">
-            <label for="published">Published</label>
-            <input type="checkbox" name="published" value="1" checked="" class="form__published--checkbox">
-        </span>
-
-        <input type="submit" class="form__submit">
+            </span>
+            <span class="form__wrapper">
+                <label for="image" class="form__label">Media</label>
+                <input type="text" value="<?php echo e(old('image')); ?>" name="image" class="form__input">
+            </span>
+            <input type="hidden" value="<?php echo e(Auth::user()->name); ?>" name="author">
+        </div>
+        <div class="form__details">
+            <span class="form__stage">
+                <label for="stage">Stage 1</label>
+                <input type="checkbox" name="stage" value="1" checked="" class="form__stage--checkbox">
+            </span>
+            <span class="form__details--publish">
+                <span class="form__published">
+                    <label for="published" class="form__published--label">Published</label>
+                    <input type="checkbox" name="published" value="1" checked="" class="form__published--checkbox">
+                </span>
+                <input type="submit" class="form__submit" value="Publish">
+            </span>
+        </div>
     </form>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

@@ -21,6 +21,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <?php echo e(__("You're logged in!")); ?>
 
+                    <?php echo e(__("Stageblog is still in the making")); ?>
+
                 </div>
             </div>
         </div>

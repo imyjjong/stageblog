@@ -175,3 +175,82 @@
     </section>
 
 </x-app-layout>
+
+.form{
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 2rem;
+    background: blue;
+
+    &__title{
+        font-size: 150%;
+        font-weight: 600;
+    }
+
+    &__inputs{
+        background: red;
+        width: 100%;
+        height: 50rem;
+        overflow: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 2rem;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+        width: 100%;
+        //background: lighten(black, 7%);
+        padding: 1rem;
+    }
+
+    &__input{
+        background: none;
+        border: none;
+        border-bottom: 0.2rem solid map-get(variables.$baseVars, "");
+        padding: 0.4rem 0.8rem;
+        color: map-get(variables.$baseVars, "color");
+        font-size: 100%;
+        font-family: map-get(variables.$baseVars, "font");
+        width: 100%;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    &__published{
+        @include mixins.checkbox;
+    }
+    &__stage{
+        @include mixins.checkbox;
+    }
+    &__submit{
+        background: blueviolet;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 100%;
+        font-weight: 500;
+        color: white;
+        border-radius: 0.2rem;
+        transition: 0.2s;
+
+        &:hover{
+            cursor: pointer;
+            background: darken(blueviolet, 3%);
+        }
+    }
+    &__error{
+        color: map-get(variables.$baseVars, "error");
+        font-size: 70%;
+    }
+}

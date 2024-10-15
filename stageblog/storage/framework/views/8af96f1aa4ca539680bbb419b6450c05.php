@@ -33,9 +33,9 @@
                 <?php echo e($slot); ?>
 
             </main>
-            <footer class="footer">
+            <!-- <footer class="footer">
                 <p class="footer__text">Stageblog</p>
-            </footer>
+            </footer> -->
         </div>
     </body>
 </html>

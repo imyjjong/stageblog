@@ -2,7 +2,7 @@ $baseVars: (
     "background": black,
     "color": whitesmoke,
     "font": sans-serif,
-    "accent": #ccc4f6,
+    "accent": orange,
     "error": rgb(158, 2, 2)
 );
 
@@ -11,17 +11,17 @@ $postVars: (
 );
 
 $welcomeVars: (
-    "background": black,
-    "color": white,
-    "svg": white,
-    "navigationColor": white,
-    "focusRed": red,
-    "cardBackground": #18181b,
-    "laravelImage": #ff2d20
+    "background": #000000,
+    "color": white
 );
 
 $accentColor: (
     "second": #ecc4f6,
     "grey": darken(whitesmoke, 55%),
     "button": rgb(26, 16, 76)
+);
+
+$buttonVars: (
+    "dashboard": #371545,
+    "signin": rgb(73, 23, 54)
 );

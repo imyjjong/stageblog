@@ -82,6 +82,17 @@
         &--item{
             font-weight: 600;
             color: map-get(variables.$accentColor, "second");
+            @include mixins.flexBox;
+            gap: 1rem;
         }
+
+        &--auth{
+            &-image{
+                width: 5rem;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 50%;
+        }
+    }
     }
 }

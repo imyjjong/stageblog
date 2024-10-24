@@ -9,6 +9,12 @@
             <x-input-error :messages="$errors->get('name')" class="auth__error" />
         </div>
 
+        <div class="auth__wrapper">
+            <x-input-label class="auth__label" for="image" :value="__('image')" />
+            <x-text-input id="image" class="auth__input" type="text" name="image" :value="old('image')" required autofocus autocomplete="image" />
+            <x-input-error :messages="$errors->get('image')" class="auth__error" />
+        </div>
+
         <!-- Email Address -->
         <div class="auth__wrapper">
             <x-input-label class="auth__label" for="email" :value="__('Email')" />

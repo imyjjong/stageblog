@@ -59,6 +59,7 @@ unset($__errorArgs, $__bag); ?>
                 <input type="text" value="<?php echo e(old('image')); ?>" name="image" class="form__input">
             </span>
             <input type="hidden" value="<?php echo e(Auth::user()->name); ?>" name="author">
+            <input type="hidden" value="<?php echo e(Auth::user()->image); ?>" name="authorimage">
         </div>
         <div class="form__details">
             <span class="form__stage">

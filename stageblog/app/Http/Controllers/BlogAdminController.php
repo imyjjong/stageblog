@@ -33,6 +33,7 @@ class BlogAdminController extends Controller
             'intro' => 'required',
             'description' => 'required',
             'author' => 'required',
+            'authorimage' => '',
             'image' => '',
             'stage' => '',
             'published' => '',

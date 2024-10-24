@@ -42,6 +42,11 @@
     padding: 2rem 4rem 1rem 4rem;
     width: 70rem;
 
+    &__link{
+        text-decoration: none;
+        color: inherit;
+    }
+
     &__blog{
         width: 100%;
         display: flex;
@@ -74,6 +79,12 @@
     &__details{
         @include mixins.flexBox;
         gap: 1rem;
+        &--image{
+            width: 5rem;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+        }
         &--author{
             font-size: 90%;
         }
@@ -114,6 +125,12 @@
             @include mixins.flexBox;
             background: lighten(map-get(variables.$baseVars, "background"), 3%);
             border-radius: 2rem;
+        }
+
+        &--image{
+            width: 5rem;
+            aspect-ratio: 1/1;
+            object-fit: cover;
         }
 
         &--input{

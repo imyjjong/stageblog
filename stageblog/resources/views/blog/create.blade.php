@@ -29,6 +29,7 @@
                 <input type="text" value="{{ old('image') }}" name="image" class="form__input">
             </span>
             <input type="hidden" value="{{ Auth::user()->name }}" name="author">
+            <input type="hidden" value="{{ Auth::user()->image }}" name="authorimage">
         </div>
         <div class="form__details">
             <span class="form__stage">

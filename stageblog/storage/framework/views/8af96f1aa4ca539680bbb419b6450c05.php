@@ -8,6 +8,7 @@
         <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="https://use.typekit.net/amz3ntg.css">
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 

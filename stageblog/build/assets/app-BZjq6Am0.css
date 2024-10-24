@@ -27,44 +27,12 @@ body {
 }
 
 .welcome {
-  background: #000000;
-  color: white;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.welcome__auth {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-}
-.welcome__auth--name {
-  font-size: 200%;
-}
-.welcome__auth--signin {
-  background: rgb(73, 23, 54);
-  padding: 1.4rem 2rem;
-  color: whitesmoke;
-  text-decoration: none;
-  font-weight: 600;
-}
-.welcome__auth--signin:focus {
-  outline: none;
-}
-.welcome__auth--dashboard {
-  background: #371545;
-  padding: 1.4rem 2rem;
-  color: whitesmoke;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 5rem;
-}
-.welcome__auth--dashboard:focus {
-  outline: none;
+  background: blue;
+  color: red;
 }
 
 .guestbody {
@@ -98,7 +66,7 @@ body {
 .auth__wrapper--login:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: orange;
+  color: #ccc4f6;
 }
 .auth__wrapper--submit {
   display: flex;
@@ -124,18 +92,18 @@ body {
   appearance: none;
   width: 2rem;
   aspect-ratio: 1/1;
-  border: 0.2rem solid orange;
+  border: 0.2rem solid #ccc4f6;
 }
 .auth__checkbox--checkbox:hover {
   cursor: pointer;
 }
 .auth__checkbox--checkbox:checked {
-  background: orange;
+  background: #ccc4f6;
 }
 .auth__button {
   background: none;
   border: none;
-  color: orange;
+  color: #ccc4f6;
   font-size: 100%;
   font-weight: 600;
 }
@@ -190,10 +158,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-bottom: 0.2rem solid orange;
+  border-bottom: 0.2rem solid #ccc4f6;
 }
 .header__navigation--list-active a {
-  color: orange;
+  color: #ccc4f6;
   text-decoration: none;
   font-weight: 600;
 }
@@ -229,7 +197,7 @@ body {
   gap: 1rem;
   padding: 1rem 0.6rem;
   width: 10rem;
-  background: orange;
+  background: #ccc4f6;
 }
 .header__navigation--list-button:hover .header__navigation--list-wrapper {
   display: flex;
@@ -265,14 +233,14 @@ body {
   font-weight: 600;
   text-decoration: none;
   border-radius: 0.1rem;
-  background: orange;
+  background: #ccc4f6;
 }
 .blogs__new:hover {
   cursor: pointer;
-  background: #f59e00;
+  background: #c4bbf5;
 }
 .blogs__results {
-  color: rgba(255, 165, 0, 0.4);
+  color: rgba(204, 196, 246, 0.4);
   margin-bottom: 1rem;
   font-size: 90%;
 }
@@ -284,13 +252,9 @@ body {
   justify-content: center;
   align-items: start;
   gap: 1rem;
-  border: 0.01rem solid rgba(255, 165, 0, 0.2);
+  border: 0.01rem solid rgba(204, 196, 246, 0.2);
   padding: 2rem 4rem 1rem 4rem;
   width: 70rem;
-}
-.post__link {
-  text-decoration: none;
-  color: inherit;
 }
 .post__blog {
   width: 100%;
@@ -312,7 +276,7 @@ body {
   font-size: 1.3rem;
 }
 .post__wrapper--published {
-  color: orange;
+  color: #ccc4f6;
   font-weight: 600;
 }
 .post__wrapper--draft {
@@ -336,7 +300,7 @@ body {
 }
 .post__details--date {
   font-size: 85%;
-  color: orange;
+  color: #ccc4f6;
   opacity: 0.4;
 }
 .post__intro {
@@ -347,14 +311,14 @@ body {
   color: #ecc4f6;
 }
 .post__stage--two {
-  color: orange;
+  color: #ccc4f6;
 }
 .post__readLink {
-  color: orange;
+  color: #ccc4f6;
   text-decoration: none;
 }
 .post__readLink:hover {
-  color: #ffae1a;
+  color: #dfdaf9;
 }
 .post__comments {
   width: 100%;
@@ -394,8 +358,8 @@ body {
   border-radius: 0 2rem 2rem 0;
   border: none;
   background: none;
-  border-left: 0.01rem solid rgba(255, 165, 0, 0.2);
-  color: orange;
+  border-left: 0.01rem solid rgba(204, 196, 246, 0.2);
+  color: #ccc4f6;
   font-weight: 600;
 }
 .post__comments--submit:hover {
@@ -478,7 +442,7 @@ body {
 }
 .form__stage--checkbox:checked {
   cursor: pointer;
-  background: orange;
+  background: blue;
 }
 .form__details {
   width: 100%;
@@ -508,7 +472,7 @@ body {
 }
 .form__published--checkbox:checked {
   cursor: pointer;
-  background: orange;
+  background: blue;
 }
 .form__submit {
   background: rgb(26, 16, 76);
@@ -540,12 +504,12 @@ body {
   color: whitesmoke;
 }
 .pagination__arrows--previous-link {
-  color: orange;
+  color: #ccc4f6;
   font-weight: 600;
   text-decoration: none;
 }
 .pagination__arrows--next {
-  color: orange;
+  color: #ccc4f6;
   font-weight: 600;
   text-decoration: none;
 }
@@ -573,7 +537,7 @@ body {
   gap: 1rem;
 }
 .pagination__results--numbers-active {
-  color: orange;
+  color: #ccc4f6;
   font-weight: 600;
   font-size: 100%;
 }
@@ -582,7 +546,7 @@ body {
   text-decoration: none;
 }
 .pagination__results--numbers-number:hover {
-  color: orange;
+  color: #ccc4f6;
 }
 
 .footer {
@@ -592,8 +556,8 @@ body {
   align-items: center;
   padding: 4rem;
   font-size: 90%;
-  color: rgba(255, 165, 0, 0.4);
-  border-top: 0.1rem solid rgba(255, 165, 0, 0.4);
+  color: rgba(204, 196, 246, 0.4);
+  border-top: 0.1rem solid rgba(204, 196, 246, 0.4);
 }
 
 .blog {
@@ -602,7 +566,7 @@ body {
   align-items: center;
   width: 100%;
   height: 60rem;
-  border: 0.01rem solid rgba(255, 165, 0, 0.4);
+  border: 0.01rem solid rgba(204, 196, 246, 0.4);
 }
 .blog__media {
   width: 60%;
@@ -629,7 +593,7 @@ body {
   font-weight: 500;
 }
 .blog__wrapper {
-  border-left: 0.1rem solid rgba(255, 165, 0, 0.4);
+  border-left: 0.1rem solid rgba(245, 245, 245, 0.4);
   width: 40%;
   height: 100%;
   display: flex;
@@ -646,7 +610,6 @@ body {
   justify-content: start;
   align-items: start;
   gap: 0.4rem;
-  padding: 1rem 2rem;
 }
 .blog__info--details {
   display: flex;
@@ -677,7 +640,7 @@ body {
 .blog__info--wrapper {
   font-size: 70%;
   font-weight: 500;
-  color: orange;
+  color: #ccc4f6;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -697,10 +660,6 @@ body {
 }
 .blog__comments::-webkit-scrollbar {
   display: none;
-}
-.blog__comments--empty {
-  font-size: 85%;
-  color: #767676;
 }
 .blog__comment {
   display: flex;
@@ -739,46 +698,6 @@ body {
   font-weight: 600;
   color: dimgray;
 }
-.blog__commentForm {
-  border-top: 0.1rem solid rgba(255, 165, 0, 0.4);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-.blog__commentForm--form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #080808;
-  border-radius: 2rem;
-}
-.blog__commentForm--input {
-  width: 100%;
-  border: none;
-  background: none;
-  padding: 0 1rem;
-  color: whitesmoke;
-  font-size: 100%;
-}
-.blog__commentForm--input:focus {
-  outline: none;
-}
-.blog__commentForm--submit {
-  height: 100%;
-  padding: 1rem 2rem;
-  border-radius: 0 2rem 2rem 0;
-  border: none;
-  background: none;
-  border-left: 0.01rem solid rgba(255, 165, 0, 0.2);
-  color: orange;
-  font-weight: 600;
-}
-.blog__commentForm--submit:hover {
-  cursor: pointer;
-}
 
 .about {
   padding: 4rem;
@@ -791,11 +710,11 @@ body {
 }
 .about__title {
   font-size: 180%;
-  color: orange;
+  color: #ccc4f6;
 }
 .about__wrapper--text {
   font-size: 110%;
   font-weight: 100;
 }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=app-BZjq6Am0.css.map */

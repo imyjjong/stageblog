@@ -13,32 +13,36 @@
         <p class="blogs__results">There are <?php echo e($posts->total()); ?> results</p>
     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <article class="post">
-            <div class="post__blog">
-                <span class="post__details">
-                    <h3 class="post__details--author"><?php echo e($post->author); ?></h3>
-                    <p class="post__details--date"><?php echo e($post->created_at->format('d-m-y')); ?></p>
-                </span>
-                <h3 class="post__intro"><?php echo e($post->intro); ?></h3>
-                <span class="post__wrapper">
-                    <?php if($post->stage == true): ?>
-                        <h3 class="post__stage--one">Stage 2</h3>
-                    <?php else: ?>
-                        <h3 class="post__stage--two">Stage 1</h3>
+            <a href="<?php echo e(route('posts.show', $post)); ?>" class="post__link">
+                <div class="post__blog">
+                    <span class="post__details">
+                        <img src="<?php echo e($post->authorimage); ?>" alt="" class="post__details--image">
+                        <h3 class="post__details--author"><?php echo e($post->author); ?></h3>
+                        <p class="post__details--date"><?php echo e($post->created_at->format('d-m-y')); ?></p>
+                    </span>
+                    <h3 class="post__intro"><?php echo e($post->intro); ?></h3>
+                    <span class="post__wrapper">
+                        <?php if($post->stage == true): ?>
+                            <h3 class="post__stage--one">Stage 2</h3>
+                        <?php else: ?>
+                            <h3 class="post__stage--two">Stage 1</h3>
+                        <?php endif; ?>
+                        <?php if($post->published == true): ?>
+                            <h3 class="post__wrapper--published">published</h3>
+                        <?php else: ?>     
+                            <h3 class="post__wrapper--draft">draft</h3>
+                        <?php endif; ?>
+                    </span>
+                    <?php if(isset($post->image)): ?>
+                        <img class="post__image" src="<?php echo e($post->image); ?>" alt="">
                     <?php endif; ?>
-                    <?php if($post->published == true): ?>
-                        <h3 class="post__wrapper--published">published</h3>
-                    <?php else: ?>     
-                        <h3 class="post__wrapper--draft">draft</h3>
-                    <?php endif; ?>
-                </span>
-                <?php if(isset($post->image)): ?>
-                    <img class="post__image" src="<?php echo e($post->image); ?>" alt="">
-                <?php endif; ?>
-            </div>
+                </div>
+            </a>
             <div class="post__comments">
                 <form action="<?php echo e(route('comments.store', $post)); ?>" method="POST" class="post__comments--form">
                     <?php echo csrf_field(); ?>
                     <input name="author" type="hidden" value="<?php echo e(Auth::user()->name); ?>">
+                    <input name="image" type="hidden" value="<?php echo e(Auth::user()->image); ?>">
                     <input class="post__comments--input" type="text" name="comment">
                     <input class="post__comments--submit" type="submit" value="Send">
                 </form>

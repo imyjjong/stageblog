@@ -81,7 +81,7 @@
 
             &:checked{
                 cursor: pointer;
-                background: blue;
+                background: map-get(variables.$baseVars, "accent");
             }
         }
     }
@@ -112,7 +112,7 @@
 
             &:checked{
                 cursor: pointer;
-                background: blue;
+                background: map-get(variables.$baseVars, "accent");
             }
         }
     }

@@ -16,6 +16,7 @@
         <div class="blog__wrapper">
             <article class="blog__info">
                 <span class="blog__info--details">
+                    <img src="{{$post->authorimage}}" alt="" class="blog__info--details-image">
                     <h2 class="blog__info--details-author">{{$post->author}}</h2>
                     <h3 class="blog__info--details-date">{{$post->created_at->format('d-m-y')}}</h3>
                 </span>
@@ -40,6 +41,7 @@
                     @foreach($comments as $comment)
                         <article class="blog__comment">
                             <span class="blog__comment--wrapper">
+                                <img src="{{$comment->image}}" alt="" class="blog__comment--image">
                                 <h3 class="blog__comment--wrapper-author">{{$comment->author}}</h3>
                             </span>
                             <p class="blog__comment--text">{{$comment->comment}}</p>
@@ -48,6 +50,16 @@
                     @endforeach
                 @endif
             </div>
+            <div class="blog__commentForm">
+                <form action="{{route('comments.store', $post)}}" method="POST" class="blog__commentForm--form">
+                    @csrf
+                    <input name="author" type="hidden" value="{{Auth::user()->name}}">
+                    <input name="image" type="hidden" value="{{Auth::user()->image}}">
+                    <input class="blog__commentForm--input" type="text" name="comment">
+                    <input class="blog__commentForm--submit" type="submit" value="Send">
+                </form>
+            </div>
+        </article>
         </div>
     </section>
 </x-app-layout>

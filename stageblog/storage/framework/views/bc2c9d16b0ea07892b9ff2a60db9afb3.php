@@ -25,6 +25,7 @@
         <div class="blog__wrapper">
             <article class="blog__info">
                 <span class="blog__info--details">
+                    <img src="<?php echo e($post->authorimage); ?>" alt="" class="blog__info--details-image">
                     <h2 class="blog__info--details-author"><?php echo e($post->author); ?></h2>
                     <h3 class="blog__info--details-date"><?php echo e($post->created_at->format('d-m-y')); ?></h3>
                 </span>
@@ -49,6 +50,7 @@
                     <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <article class="blog__comment">
                             <span class="blog__comment--wrapper">
+                                <img src="<?php echo e($comment->image); ?>" alt="" class="blog__comment--image">
                                 <h3 class="blog__comment--wrapper-author"><?php echo e($comment->author); ?></h3>
                             </span>
                             <p class="blog__comment--text"><?php echo e($comment->comment); ?></p>
@@ -57,6 +59,16 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
             </div>
+            <div class="blog__commentForm">
+                <form action="<?php echo e(route('comments.store', $post)); ?>" method="POST" class="blog__commentForm--form">
+                    <?php echo csrf_field(); ?>
+                    <input name="author" type="hidden" value="<?php echo e(Auth::user()->name); ?>">
+                    <input name="image" type="hidden" value="<?php echo e(Auth::user()->image); ?>">
+                    <input class="blog__commentForm--input" type="text" name="comment">
+                    <input class="blog__commentForm--submit" type="submit" value="Send">
+                </form>
+            </div>
+        </article>
         </div>
     </section>
  <?php echo $__env->renderComponent(); ?>
